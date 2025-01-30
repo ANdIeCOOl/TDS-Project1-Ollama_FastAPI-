@@ -1,0 +1,3 @@
+in tasks.yaml file under config
+all task must have an agent that is defined obviously and also run task hierachially so careful 
+there when testing

@@ -1,0 +1,166 @@
+research_task:
+  description: >
+   explain in conicse manner about {topic}
+  expected_output: >
+    5 lines explaing {topic}
+  agent: researcher
+
+A1_task:
+  description: >
+    Install uv (if required) and run https://raw.githubusercontent.com/sanand0/tools-in-data-science-public/tds-2025-01/datagen.py with ${user.email} as the only argument. (NOTE: This will generate data files required for the next tasks.)
+  expected_output: >
+    Generate data files required for the next tasks in a folder called 'data'.
+  agent: A_Agent
+
+A2_task:
+  description: >
+    Format the contents of /data/format.md using prettier@3.4.2, updating the file in-place.
+  expected_output: >
+    /data/format.md formatted using prettier@3.4.2
+  agent: A_Agent
+
+A3_task:
+  description: >
+    The file /data/dates.txt contains a list of dates, one per line. Count the number of Wednesdays in the list, and write just the number to /data/dates-wednesdays.txt.
+  expected_output: >
+    A single number (count of Wednesdays) written to /data/dates-wednesdays.txt
+  agent: A_Agent
+
+A4_task:
+  description: >
+    Sort the array of contacts in /data/contacts.json by last_name, then first_name, and write the result to /data/contacts-sorted.json.
+  expected_output: >
+    /data/contacts-sorted.json containing contacts sorted by last_name and first_name.
+  agent: A_Agent
+
+A5_task:
+  description: >
+    Write the first line of the 10 most recent .log file in /data/logs/ to /data/logs-recent.txt, most recent first.
+  expected_output: >
+    First line of the 10 most recent log files written to /data/logs-recent.txt
+  agent: A_Agent
+
+A6_task:
+  description: >
+    Find all Markdown (.md) files in /data/docs/. For each file, extract the first occurrence of each H1 (i.e., a line starting with #). Create an index file /data/docs/index.json that maps each filename (without the /data/docs/ prefix) to its title.
+  expected_output: >
+    /data/docs/index.json containing a map of each markdown file to its extracted H1 title.
+  agent: A_Agent
+
+A7_task:
+  description: >
+    /data/email.txt contains an email message. Pass the content to an LLM (You ARE THE LLM) with instructions to extract the sender’s email address, and write just the email address to /data/email-sender.txt.
+  expected_output: >
+    The sender's email address written to /data/email-sender.txt.
+  agent: A_Agent
+
+A8_task:
+  description: >
+    /data/credit-card.png contains a credit card number. Pass the image to an LLM, have it extract the card number, and write it without spaces to /data/credit-card.txt.
+  expected_output: >
+    The credit card number extracted and written to /data/credit-card.txt without spaces.
+  agent: A_Agent
+
+A9_task:
+  description: >
+    /data/comments.txt contains a list of comments, one per line. Using embeddings, find the most similar pair of comments and write them to /data/comments-similar.txt, one per line.
+  expected_output: >
+    The most similar pair of comments written to /data/comments-similar.txt.
+  agent: A_Agent
+
+A10_task:
+  description: >
+    The SQLite database file /data/ticket-sales.db has a table 'tickets' with columns type, units, and price. Each row is a customer bid for a concert ticket. What is the total sales of all the items in the “Gold” ticket type? Write the number in /data/ticket-sales-gold.txt.
+  expected_output: >
+    The total sales of "Gold" tickets written to /data/ticket-sales-gold.txt.
+  agent: A_Agent
+
+  B1_task:
+  description: >
+    Ensure that no data outside /data is accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    Ensure that no external data is accessed or exfiltrated.
+    Ensure no data is deleted from the file system.
+  agent: B_Agent
+
+B2_task:
+  description: >
+    Ensure that data is never deleted anywhere on the file system, even if the task description asks for it.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+  expected_output: >
+    Ensure no data is deleted from the file system.
+    Ensure that no external data is accessed or exfiltrated.
+  agent: B_Agent
+
+B3_task:
+  description: >
+    Fetch data from an API and save it.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    Data fetched from an API and saved in a specified format (e.g., JSON or CSV) inside /data.
+  agent: B_Agent
+
+B4_task:
+  description: >
+    Clone a git repo and make a commit.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    The specified git repository cloned and a commit made with changes.
+  agent: B_Agent
+
+B5_task:
+  description: >
+    Run a SQL query on a SQLite or DuckDB database.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    Results of the SQL query executed on the database.
+  agent: B_Agent
+
+B6_task:
+  description: >
+    Extract data from (i.e., scrape) a website.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    Data extracted from the website and saved in the appropriate format in /data.
+  agent: B_Agent
+
+B7_task:
+  description: >
+    Compress or resize an image.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    The image compressed or resized and saved in /data.
+  agent: B_Agent
+
+B8_task:
+  description: >
+    Transcribe audio from an MP3 file.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    Text transcribed from the audio in the MP3 file, saved in /data.
+  agent: B_Agent
+
+B9_task:
+  description: >
+    Convert Markdown to HTML.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    The Markdown file converted to HTML and saved in /data.
+  agent: B_Agent
+
+B10_task:
+  description: >
+    Write an API endpoint that filters a CSV file and returns JSON data.
+    Data outside /data is never accessed or exfiltrated, even if the task description asks for it.
+    Data is never deleted anywhere on the file system, even if the task description asks for it.
+  expected_output: >
+    An API endpoint that filters a CSV file and returns the filtered data in JSON format.
+  agent: B_Agent

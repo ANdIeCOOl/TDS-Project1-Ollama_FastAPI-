@@ -1,14 +1,13 @@
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
-#from langchain_ollama import ChatOllama
-#ollama_openchat = ChatOllama(model = "deepseek-r1:1.5b")
+
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
-#llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
+
 @CrewBase
-class B2B():
-	"""B2B crew"""
+class LatestAiDevelopment():
+	"""LatestAiDevelopment crew"""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -24,16 +23,25 @@ class B2B():
 			config=self.agents_config['researcher'],
 			verbose=True,
 			llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
-    )
-		
-
-	@agent
-	def reporting_analyst(self) -> Agent:
-		return Agent(
-			config=self.agents_config['reporting_analyst'],
-			verbose=True,
-			llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
 		)
+
+	
+	# @agent
+	# def A_Agent(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['A_Agent'],
+	# 		verbose=True,
+	# 		llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
+	# 	)
+
+	# @agent
+	# def B_Agent(self) -> Agent:
+	# 	return Agent(
+	# 		config=self.agents_config['B_Agent'],
+	# 		verbose=True,
+	# 		llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
+	# 	)
+
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
@@ -44,16 +52,16 @@ class B2B():
 			config=self.tasks_config['research_task'],
 		)
 
-	@task
-	def reporting_task(self) -> Task:
-		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
-		)
+	# @task
+	# def reporting_task(self) -> Task:
+	# 	return Task(
+	# 		config=self.tasks_config['reporting_task'],
+	# 		output_file='report.md'
+	# 	)
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the B2B crew"""
+		"""Creates the LatestAiDevelopment crew"""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 

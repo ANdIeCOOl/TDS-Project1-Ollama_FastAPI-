@@ -4,7 +4,7 @@ import warnings
 
 from datetime import datetime
 
-from b2b.crew import B2B
+from latest_ai_development.crew import LatestAiDevelopment
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -18,11 +18,11 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        'topic': 'Why is sky blue?'
     }
     
     try:
-        B2B().crew().kickoff(inputs=inputs)
+        LatestAiDevelopment().crew().kickoff(inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 
@@ -35,7 +35,7 @@ def train():
         "topic": "AI LLMs"
     }
     try:
-        B2B().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        LatestAiDevelopment().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
@@ -45,7 +45,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        B2B().crew().replay(task_id=sys.argv[1])
+        LatestAiDevelopment().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -58,7 +58,7 @@ def test():
         "topic": "AI LLMs"
     }
     try:
-        B2B().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+        LatestAiDevelopment().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")

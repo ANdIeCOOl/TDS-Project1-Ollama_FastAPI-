@@ -1,0 +1,8 @@
+research_task:
+  description: >
+   explain in conicse manner about {topic}
+  expected_output: >
+    5 lines explaing {topic}
+  agent: researcher
+
+  
