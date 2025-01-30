@@ -1,5 +1,6 @@
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
+from crewai_tools import CodeInterpreterTool
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -22,7 +23,9 @@ class LatestAiDevelopment():
 		return Agent(
 			config=self.agents_config['researcher'],
 			verbose=True,
-			llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
+			llm=LLM(model="ollama/gemma:7b", base_url="http://localhost:11434"),
+			tools=[CodeInterpreterTool()],
+			allow_code_execution=True
 		)
 
 	
@@ -31,7 +34,7 @@ class LatestAiDevelopment():
 	# 	return Agent(
 	# 		config=self.agents_config['A_Agent'],
 	# 		verbose=True,
-	# 		llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
+	# 		llm=LLM(model="ollama/llama3.2:1b", base_url="http://localhost:11434")
 	# 	)
 
 	# @agent
@@ -39,7 +42,7 @@ class LatestAiDevelopment():
 	# 	return Agent(
 	# 		config=self.agents_config['B_Agent'],
 	# 		verbose=True,
-	# 		llm=LLM(model="ollama/deepseek-r1:1.5b", base_url="http://localhost:11434")
+	# 		llm=LLM(model="ollama/llama3.2:1b", base_url="http://localhost:11434")
 	# 	)
 
 

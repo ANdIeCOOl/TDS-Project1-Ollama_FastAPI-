@@ -44,7 +44,7 @@ def mismatch(msg, expected, result):
 
 
 async def run(task: str):
-    async with httpx.AsyncClient(timeout=30) as client:
+    async with httpx.AsyncClient(timeout=300) as client:
         logging.warning(f"🟡 Running task: {task.strip()}")
         response = await client.post("http://localhost:8000/run", params={"task": task})
         try:
