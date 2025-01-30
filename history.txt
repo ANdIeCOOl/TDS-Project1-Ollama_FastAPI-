@@ -1,0 +1,69 @@
+    1  pip install uv
+    2  pip uninstall uv
+    3  curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR="/custom/path" sh
+    4  pip install uv
+    5  uv venv virtual_env_for_ollam_fastapi
+    6  source virtual_env_for_ollam_fastapi/bin/activate
+    7  uv pip install fastapi uvicorn requests
+    8  fastapi dev
+    9  pip install fast api
+   10  exit
+   11  ollama list
+   12  curl http://localhost:11434/api/generate -d '{
+   13    "model": "llama3.2",
+   14    "prompt": "Why is the sky blue?",
+   15    "options": {
+   16      "num_ctx": 4096
+   17    }
+   18  }'
+   19  curl http://localhost:11434/api/generate -d '{
+   20    "model": "deepseek-r1:1.5b",
+   21    "prompt": "Why is the sky blue?",
+   22    "options": {
+   23      "num_ctx": 4096
+   24    }
+   25  }'
+   26  curl http://localhost:11434/api/generate -d '{
+   27    "model": "deepseek-r1:1.5b",
+   28    "prompt": "Why is the sky blue?",
+   29    "options": {
+   30      "num_ctx": 4096
+   31    },
+   32  }'
+   33  curl http://localhost:11434/api/generate -d '{
+   34    "model": "deepseek-r1:1.5b",
+   35    "prompt": "Why is the sky blue?",
+   36    "options": {
+   37      "num_ctx": 4096
+   38    },"stream": "False"
+   39  }'
+   40  curl http://localhost:11434/api/generate -d '{
+   41    "model": "deepseek-r1:1.5b",
+   42    "prompt": "Why is the sky blue?",
+   43    "options": {
+   44      "num_ctx": 4096
+   45    },"stream": false
+   46  }'
+   47  ollama list
+   48  crewai create crew <project_name>
+   49  crewai create crew Project 1 - LLM-based Automation Agent
+   50  sqlite3 --version
+   51  python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
+   52  python3 -c "import sqlite3; print(sqlite3.__file__)"
+   53  ldd $(python3 -c "import sqlite3; print(sqlite3.__file__.replace('__init__.py', '_sqlite3.so'))") | grep sqlite
+   54  sqlite3 --version
+   55  python3 -c "import sqlite3"
+   56  print(sqlite3.sqlite_version)
+   57  python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
+   58  export PATH=$HOME/sqlite/bin:$PATH
+   59  export LD_LIBRARY_PATH=$HOME/sqlite/lib:$LD_LIBRARY_PATH
+   60  python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
+   61  grep
+   62  /opt/conda/bin/sqlite3 --version
+   63  python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
+   64  export PATH=/opt/conda/bin:$PATH
+   65  export LD_LIBRARY_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
+   66  python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
+   67  crewai create crew Project 1 - LLM-based Automation Agent
+   68  crewai create crew "Project 1 - LLM-based Automation Agent"
+   69  history >> history.txt

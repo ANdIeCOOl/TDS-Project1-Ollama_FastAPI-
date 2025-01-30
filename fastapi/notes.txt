@@ -14,8 +14,7 @@ response: empty if the response was streamed, if not streamed, this will contain
 Chromadb error
 @ANdIeCOOl ➜ /workspaces/TDS-Project1-Ollama_FastAPI- (main) $ /opt/conda/bin/sqlite3 --version
 3.45.3 2024-04-15 13:34:05 8653b758870e6ef0c98d46b3ace27849054af85da891eb121e9aaa537f1e8355 (64-bit)
-@ANdIeCOOl ➜ /workspaces/TDS-Project1-Ollama_FastAPI- (main) $ export PATH=/opt/conda/bin:$PATH
-_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
+@ANdIeCOOl ➜ /workspaces/TDS-Project1-Ollama_FastAPI- (main) $ export PATH=/opt/conda/bin:$PATH_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
 @ANdIeCOOl ➜ /workspaces/TDS-Project1-Ollama_FastAPI- (main) $ export LD_LIBRARY_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
 @ANdIeCOOl ➜ /workspaces/TDS-Project1-Ollama_FastAPI- (main) $ export PATH=/opt/conda/bin:$PATH
 @ANdIeCOOl ➜ /workspaces/TDS-Project1-Ollama_FastAPI- (main) $ export LD_LIBRARY_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
