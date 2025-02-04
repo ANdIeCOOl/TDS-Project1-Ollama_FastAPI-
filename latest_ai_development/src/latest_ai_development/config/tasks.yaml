@@ -1,8 +1,8 @@
-research_task:
+coding_task:
   description: >
-   explain in conicse manner about {topic}
+   {topic}. Always use the DirectoryTool to find info.md and then read it usingFileReader tool.NOTE file name is info.md
   expected_output: >
-    5 lines explaing {topic}
-  agent: researcher
+    code executed correctly with the expected output mentioned in the decription.
+  agent: Coder
 
   
