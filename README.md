@@ -1,5 +1,6 @@
 # TDS-Project1-Ollama_FastAPI-
 ## Info
+- Create codespaces on main or evalution script branch
 Use history.txt to get sqlite to version 3.4.1 into bash session 
    - 64  export PATH=/opt/conda/bin:$PATH
    - 65  export LD_LIBRARY_PATH=/opt/conda/lib:$LD_LIBRARY_PATH
