@@ -69,8 +69,8 @@ async def read(path: str):
 async def a1(email: str, **kwargs):
     await run(
         f"""
-Install `uv` (if required) and run the script `https://raw.githubusercontent.com/sanand0/tools-in-data-science-public/tds-2025-01/datagen.py`
-with `{email}` as the only argument
+Install `uv` (if required) and download `https://raw.githubusercontent.com/sanand0/tools-in-data-science-public/tds-2025-01/datagen.py` and then run the downloaded file with uv
+with `{email}` as the only argument. NOTE DO NO NEED uvicorn just uv.
 """
     )
     return email in await read("/data/format.md")
@@ -254,7 +254,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Evaluate tasks with configurable logging")
-    parser.add_argument("--email", default="user@example.com", help="Set the email address")
+    parser.add_argument("--email", default="23f1002382@ds.study.iitm.ac.in", help="Set the email address")
     levels = ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]
     parser.add_argument("--log-level", default="INFO", choices=levels, help="Set logging level")
     args = parser.parse_args()
